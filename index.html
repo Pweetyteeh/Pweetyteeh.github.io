@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folorunso - Portfolio</title>
+    <!-- Link the stylesheet so CSS applies to this page -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed navigation bar at the top -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Folorunso</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section: your name and tagline -->
+        <section class="hero" id="hero">
+            <h1>Hi, I'm Folorunso Taiwo Iyanuoluwa</h1>
+            <p class="tagline">Focused on AWS Cloud and DevOps, building and deploying scalable web systems with a strong focus on automation, reliability, and performance.</p>
+        </section>
+                <section class="projects" id="projects">
+            <h2>My Projects</h2>
+            <!-- Filter buttons for sorting project cards -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cloud">Cloud</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="data">Data</button>
+            </div>
+            <!-- Grid of project cards -->
+            <div class="project-grid">
+                <article class="project-card hidden" data-category="cloud">
+                    <div class="card-image">
+                        <img src="https://placehold.co/400x200/1a1a2e/eee?text=Cloud+Project" alt="Cloud project screenshot">
+                    </div>
+                    <div class="card-content">
+                        <h3>Cloud Infrastructure</h3>
+                        <p>Deployed a scalable web application using AWS services including S3, Lambda, and API Gateway.</p>
+                        <div class="tech-tags">
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>Python</span>
+                        </div>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+
+                <article class="project-card hidden" data-category="web">
+                    <div class="card-image">
+                        <img src="https://placehold.co/400x200/16213e/eee?text=Web+Project" alt="Web project screenshot">
+                    </div>
+                    <div class="card-content">
+                        <h3>Interactive Dashboard</h3>
+                        <p>Built a real-time dashboard with data visualization and responsive design for monitoring metrics.</p>
+                        <div class="tech-tags">
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+
+                <article class="project-card hidden" data-category="data">
+                    <div class="card-image">
+                        <img src="https://placehold.co/400x200/0f3460/eee?text=Data+Project" alt="Data project screenshot">
+                    </div>
+                    <div class="card-content">
+                        <h3>Data Pipeline</h3>
+                        <p>Designed an ETL pipeline to process and analyze large datasets with automated reporting.</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Pandas</span>
+                        </div>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+                <!-- About section with scroll animation -->
+        <section class="about hidden" id="about">
+            <h2>About Me</h2>
+            <p>I focus on AWS Cloud and DevOps, building and deploying scalable web applications and cloud-based systems. I enjoy working with cloud infrastructure, automation, and deployment workflows to improve reliability and performance. I’m also interested in how modern cloud tools are used to solve real-world problems and deliver efficient systems.</p>
+        </section>
+
+        <!-- Footer with contact links -->
+        <footer id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-links">
+                <a href="https://github.com/Pweetyteeh" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/folorunso-taiwo?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank">LinkedIn</a>
+                <a href="mailto:folorunsotaiwo44@gmail.com">Email</a>
+            </div>
+            <p class="copyright">Built by Folorunso Taiwo</p>
+        </footer>
+    </main>
+
+    <!-- Link JavaScript file before closing body -->
+    <script src="script.js"></script>
+</body>
+</html>
