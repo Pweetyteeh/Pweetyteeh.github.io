@@ -18,15 +18,16 @@
 }
 
 [data-theme="dark"] {
-    --color-bg: #1a1a2e;
-    --color-text: #e0e0e0;
-    --color-heading: #ffffff;
-    --color-accent: #4da8da;
-    --color-card-bg: #16213e;
-    --color-card-shadow: rgba(0, 0, 0, 0.3);
-    --color-nav-bg: #0f3460;
-    --color-tag-bg: #1a3a5c;
+    --color-bg: #000000;          /* Pure black for the main page background */
+    --color-text: #e0e0e0;        /* Light gray for readable text */
+    --color-heading: #ffffff;     /* Pure white for prominent headings */
+    --color-accent: #ffffff;      /* White accents (or keep a bright accent color if you like!) */
+    --color-card-bg: #121212;     /* Very dark gray for cards so they stand out against the pure black background */
+    --color-card-shadow: rgba(255, 255, 255, 0.05); /* Soft light shadow instead of dark shadow */
+    --color-nav-bg: #121212;      /* Match navigation bar to the cards */
+    --color-tag-bg: #2c2c2e;      /* Charcoal gray for tech tags */
 }
+
 
 * {
     margin: 0;
