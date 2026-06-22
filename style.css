@@ -17,6 +17,17 @@
     --border-radius: 8px;
 }
 
+[data-theme="dark"] {
+    --color-bg: #1a1a2e;
+    --color-text: #e0e0e0;
+    --color-heading: #ffffff;
+    --color-accent: #4da8da;
+    --color-card-bg: #16213e;
+    --color-card-shadow: rgba(0, 0, 0, 0.3);
+    --color-nav-bg: #0f3460;
+    --color-tag-bg: #1a3a5c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +43,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar {
@@ -46,6 +58,7 @@ body {
     background-color: var(--color-nav-bg);
     box-shadow: 0 2px 4px var(--color-card-shadow);
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -59,6 +72,7 @@ body {
     display: flex;
     list-style: none;
     gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .nav-links a {
@@ -70,6 +84,22 @@ body {
 
 .nav-links a:hover {
     color: var(--color-accent);
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
 }
 
 .hero {
@@ -145,7 +175,7 @@ footer h2 {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 6px var(--color-card-shadow);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease, background-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -191,6 +221,7 @@ footer h2 {
     border-radius: 12px;
     font-size: 0.85rem;
     color: var(--color-accent);
+    transition: background-color 0.3s ease;
 }
 
 .card-link {
@@ -221,6 +252,7 @@ footer {
     text-align: center;
     background-color: var(--color-heading);
     color: #ffffff;
+    transition: background-color 0.3s ease;
 }
 
 footer h2 {

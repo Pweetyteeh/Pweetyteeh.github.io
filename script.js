@@ -1,18 +1,34 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("1. DOM is fully loaded, script is running!");
+    // Theme toggle
+    const themeToggle = document.querySelector(".theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
 
+    if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeToggle.textContent = "\u2600";
+    }
+
+    themeToggle.addEventListener("click", function () {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "\u263E";
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "\u2600";
+        }
+    });
+
+    // Project filtering
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projectCards = document.querySelectorAll(".project-card");
 
-    console.log("2. Found buttons:", filterButtons.length);
-    console.log("3. Found project cards:", projectCards.length);
-
     filterButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-            console.log("4. A filter button was clicked!");
             const filter = this.getAttribute("data-filter");
-            console.log("5. Selected filter value:", filter);
 
             filterButtons.forEach(function (btn) {
                 btn.classList.remove("active");
@@ -22,15 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
             projectCards.forEach(function (card) {
                 if (filter === "all" || card.getAttribute("data-category") === filter) {
                     card.classList.remove("card-hidden");
-                    console.log("Showing card:", card);
                 } else {
                     card.classList.add("card-hidden");
-                    console.log("Hiding card:", card);
                 }
             });
         });
     });
-});
+
     // Scroll-triggered animations with IntersectionObserver
     const observerOptions = {
         threshold: 0.1,
@@ -40,15 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                // Reveal the element with a fade-in/slide-up
                 entry.target.classList.add("visible");
                 entry.target.classList.remove("hidden");
             }
         });
     }, observerOptions);
 
-    // Watch all project cards and the about section
     const animatedElements = document.querySelectorAll(".project-card, .about");
     animatedElements.forEach(function (element) {
         observer.observe(element);
     });
+});
